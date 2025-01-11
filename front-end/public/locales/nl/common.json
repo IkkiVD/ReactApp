@@ -1,0 +1,27 @@
+{
+  "app.title": "Test App",
+  "general.error": "Er is een fout opgetreden, probeer later opnieuw.",
+  "header": {
+    "welcome": "Welkom",
+    "nav": {
+      "home": "Thuispagina",
+      "login": "Meld aan",
+      "logout": "Meld af"
+    }
+  },
+  "login": {
+    "title": "Meld aan",
+    "button": "Meld aan",
+    "success": "Aanmelden succesvol, herleiden naar ...",
+    "validate": {
+      "name": "Naam is vereist",
+      "password": "Wachtwoord is vereist"
+    },
+    "label": { "username": "Gebruikersnaam:", "password": "Wachtwoord:" }
+  },
+
+  "home": {
+    "title": "Test app",
+    "description": "Je bent ingelogd als {name}"
+  }
+}
