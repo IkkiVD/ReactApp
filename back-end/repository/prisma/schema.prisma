@@ -8,16 +8,38 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  password  String
-  role      String
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String
+  role     String
 }
 
 model Book {
-  id        Int      @id @default(autoincrement())
-  title     String
-  isbn      String   @unique
-  
+  id            Int    @id @default(autoincrement())
+  title         String
+
+  author        Profile @relation(fields: [profileId], references: [id])
+  description   String
+  isbn          String  @unique
+
+  profileId   Int
+  BookProfile BookProfile[]
 }
 
+model Profile {
+  id        Int           @id @default(autoincrement())
+  firstName String
+  lastName  String
+  books     BookProfile[]
+  Book      Book[]
+}
+
+model BookProfile {
+  bookId    Int
+  profileId Int
+
+  book    Book    @relation(fields: [bookId], references: [id])
+  profile Profile @relation(fields: [profileId], references: [id])
+
+  @@id([bookId, profileId])
+}
